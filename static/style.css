@@ -1,0 +1,99 @@
+h1,h2, h3,h4, h5, h6, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(82, 36,8);
+}
+.canvas {
+    background-color: white;
+    border-radius: 20px;
+}
+.section-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.headDescr__heading, .headDescr__descr {
+    display: inline-block;
+    text-align: center;
+}
+
+.headDescr__heading {
+    color: white;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.headDescr__descr {
+    color: white;
+    font-size: 20px;
+}
+
+.main__block {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.main_headDescr {
+    display: flex;
+    flex-direction: column;
+}
+
+.blockPredict {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.canvas {
+    width: 280px;
+    height: 280px;
+    margin-bottom: 10px;
+}
+
+.button {
+    font-size: 20px;
+    padding: 2px 5px;
+    outline: none;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttonClear {
+    background-color: pink;
+}
+
+.buttonPredict {
+    background-color: aqua;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 10px white;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+.predictElem {
+    font-size: 100px;
+    color: white;
+}

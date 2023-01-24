@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/normalize.css">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Neural Network</title> 
+</head>
+<body>
+    <section class="section-main">
+        <div class="main__block">
+            <div class="main_headDescr headDescr">
+                <h1 class="headDescr__heading">Наша нейронка!</h1>
+                <p class="headDescr__descr">Нарисуйте цифру</p>
+            </div>
+
+            <div class="blockPredict">
+                <canvas class="canvas"></canvas>
+                <div class="buttons">
+                    <button class="buttonClear button">Очистить</button>
+                    <button class="buttonPredict button">Предсказать</button>
+                </div>
+                <span class="predictElem">2</span>
+            </div>
+        </div>
+    </section>
+    <script src="static/jquery.min.js"></script>
+    <script src="static/index.js"></script>
+    
+    <script type="text/javascript">
+        document.querySelector(".buttonPredict").addEventListener('click',() => {
+            const $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+            const canvas = document.querySelector(".canvas");
+            const img = canvas.toDataURL();
+            $.ajax({
+                type: "POST",
+                url: $SCRIPT_ROOT + "/predict/",
+                data: img,
+                success: function(data){
+                document.querySelector('.predictElem').textContent = data.charAt(1);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
